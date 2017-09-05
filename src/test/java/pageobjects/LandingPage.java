@@ -10,12 +10,6 @@ import static junit.framework.TestCase.assertTrue;
  */
 public class LandingPage extends Base
 {
-  By loginFormLocator = By.id("login");
-  By usernameLocator = By.id("username");
-  By passwordLocator = By.id("password");
-  By submitButton = By.cssSelector("button");
-  By successMessageLocator = By.cssSelector(".flash.success");
-  By failureMessageLocator = By.cssSelector(".flash.error");
   By searchInput = By.name("q");
   By searchSubmit = By.cssSelector(".vh79eN");
   By searchList = By.cssSelector("._2SxMvQ");
@@ -24,9 +18,6 @@ public class LandingPage extends Base
 
   public LandingPage(WebDriver driver) {
   super(driver);
-  /*visit("/login");
-  assertTrue("The login form is not present",
-  isDisplayed(loginFormLocator));*/
   visit("");
     driver.manage().window().maximize();
     try {
@@ -45,12 +36,6 @@ public class LandingPage extends Base
   } catch (InterruptedException e) {
   e.printStackTrace();
   }
-  }
-  public Boolean successMessagePresent() {
-  return isDisplayed(successMessageLocator);
-  }
-  public Boolean failureMessagePresent() {
-  return isDisplayed(failureMessageLocator);
   }
   public Boolean searchGridwallPresent() {
     return isDisplayed(searchList);
